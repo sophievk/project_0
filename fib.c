@@ -92,17 +92,25 @@ static void doFib(int n, int doPrint)
    }
    fprintf(stdout,"exit\n");
    exit(0);*/
-   if(n >= 0){
+   if(n >= -1){
       if((pid=fork()) == 0)			// if process is child
       {
         fib = first + second;
         first = second;
         second = fib;
+        //fprintf(stdout, "n: %d\n", n);
         if(n == 0 || n == 1)
         {
           fib = n;
           second = fib;
+        //  doFib(n-1, doPrint);
         }
+        /*else if(n == 1)
+        {
+          fib = n;
+          second = fib;
+          doFib(n-1, doPrint);
+        }*/
         else
         {
 //          fprintf(stdout, "before fib: %d\n",fib);
@@ -116,13 +124,19 @@ static void doFib(int n, int doPrint)
       else
       {
         waitpid(getpid(), &fib, 0);		// wait for child process to finish
+        if(WIFEXITED(fib))
+        {  
+           prevfib = WEXITSTATUS(fib);
+           fprintf(stdout, "prevfib: %d\n", prevfib);
+         }
+
       }
-      if(WIFEXITED(fib))
+      /*if(WIFEXITED(fib))
       {
         prevfib = WEXITSTATUS(fib);
 	fprintf(stdout, "prevfib: %d\n", prevfib);
-      }
-      if(doPrint == 1)
+      }*/
+      if(doPrint)
       {
         fprintf(stdout,"number: %d\n", fib);
       }
