@@ -67,81 +67,49 @@ int main(int argc, char **argv)
 //Sophie is driving
 static void doFib(int n, int doPrint)
 {
-   static int  prevfib, fib, first=0, second=1;
-   pid_t pid; 
-   /*if(n == 0 || n == 1)
-   {
-     fib = n; 
-   }
-   else
-   {
-      //fprintf(stdout, "print\n");
-     // fork();
-      if(doPrint == 1)
-      {
-        fprintf(stdout, "%d\n", fib);
-      }
-      if((pid = fork()) == 0)
-      {
-        doFib(n-1, doPrint);
-      }
-      else
-      {
-        waitpid(getpid(), &status, 0);
-      }
-   }
-   fprintf(stdout,"exit\n");
-   exit(0);*/
-   if(n >= -1){
-      if((pid=fork()) == 0)			// if process is child
-      {
-        fib = first + second;
-        first = second;
-        second = fib;
-        //fprintf(stdout, "n: %d\n", n);
-        if(n == 0 || n == 1)
-        {
-          fib = n;
-          second = fib;
-        //  doFib(n-1, doPrint);
-        }
-        /*else if(n == 1)
-        {
-          fib = n;
-          second = fib;
-          doFib(n-1, doPrint);
-        }*/
-        else
-        {
-//          fprintf(stdout, "before fib: %d\n",fib);
-//          fib += prevfib;
-//	  fprintf(stdout, "after fibL %d\n",fib);
-          doFib(n-1, doPrint);
-        }
-//        fprintf(stdout, "exit fib: %d\n", fib);
-        exit(fib);
-      }
-      else
-      {
-        waitpid(getpid(), &fib, 0);		// wait for child process to finish
-        if(WIFEXITED(fib))
-        {  
-           prevfib = WEXITSTATUS(fib);
-           fprintf(stdout, "prevfib: %d\n", prevfib);
-         }
+   int fib, f1, f2, status, status2;
+   pid_t pid, pid2;
 
-      }
-      /*if(WIFEXITED(fib))
-      {
-        prevfib = WEXITSTATUS(fib);
-	fprintf(stdout, "prevfib: %d\n", prevfib);
-      }*/
-      if(doPrint)
-      {
-        fprintf(stdout,"number: %d\n", fib);
-      }
-      exit(0);
+   if(n == 0 ||  n == 1)
+   {
+      exit(n);
    }
+   
+   pid = fork(); 
+   if(n >= 2)
+   { 
+      if(pid == 0)			// if process is child
+      {
+          doFib(n-1, doPrint-1);
+      } 
+      else
+      {
+          waitpid(pid, &status, 0);    //parent wait for child
+          f1 = WEXITSTATUS(status);
+       }
+          pid2 = fork();
+          if (pid2 == 0) 
+          {
+             doFib(n-2, doPrint-1);
+          }
+          else
+          {
+             waitpid(pid2, &status2, 0);
+             f2 = WEXITSTATUS(status2);
+          }
+    }
+    
+
+    fib = f1 + f2;
+    if(doPrint == 1)
+    {
+       fprintf(stdout, "fib: %d\n", fib);
+    }
+    else
+    {
+       exit(fib); //return to parent
+    }
+    exit(0);
 }
 
 
