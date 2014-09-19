@@ -62,9 +62,16 @@ Questions regarding Part 0
   an input of 5?  Show the return value for each child process, numbering
   the processes beginning with 0 (the original process) and incrementing for
   each child process.
+      5 child processes are created.
+      0 - 1
+      1 - 2
+      2 - 1
+      3 - 3
+      4 - 1
+      5 - 2
 
 (2) In part 0.3, which flavor of exec did you choose to use?  Why?
-
+      execve. We chose this one because
 
 ################
 Questions regarding Part 1
