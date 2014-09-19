@@ -108,11 +108,13 @@ int main(int argc, char **argv)
 //Sophie is driving
 void eval(char *cmdline) 
 {
-    char **argv;
+    char modcmd[MAXLINE];
+    char *argv[MAXARGS];
     int status;
     pid_t pid;
-
-    parseline(cmdline, argv);
+    
+    strcpy(modcmd, cmdline);
+    parseline(modcmd, argv);
 
     if(builtin_cmd(argv))
     {
@@ -123,7 +125,7 @@ void eval(char *cmdline)
        pid = fork();
        if(pid == 0)
        {
-          execve( )
+          execve(argv[0], argv, environ);
           exit(-1);
        }
        else
@@ -143,11 +145,10 @@ void eval(char *cmdline)
  */
 int builtin_cmd(char **argv) 
 {
-    /*if(argv[0] == "quit")
+    if(strcmp(argv[0], "quit") == 0)
     {
        return 1;
-    }*/
-    fprintf(stdout, "argv: %s", argv[0]);
+    }
     return 0;     /* not a builtin command */
 }
 

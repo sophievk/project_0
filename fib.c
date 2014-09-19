@@ -83,6 +83,7 @@ static void doFib(int n, int doPrint)
       }
    }
    
+   //Dara is driving
    pid = fork(); 
    if(n >= 2)
    { 
@@ -107,7 +108,7 @@ static void doFib(int n, int doPrint)
           }
     }
     
-
+    //Sophie is driving
     fib = f1 + f2;
     if(doPrint == 1)
     {
