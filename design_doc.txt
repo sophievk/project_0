@@ -1,11 +1,11 @@
 ################
 YOUR INFO
 ################
-Name1: Sophie Khounlo
-EID1: svk297
-CS login: sophiek
-Email: s.khounlo@utexas.edu
-Unique Number: 53015
+Name1: Dara Cline
+EID1: dyc257
+CS login: dara
+Email: arad1307@utexas.edu
+Unique Number: 53005
 
 Slip days used: 0
 
@@ -14,11 +14,11 @@ Slip days used: 0
 ################
 YOUR PARTNER'S INFO
 ################
-Name1: Dara Cline
-EID1: dyc257
-CS login: dara
-Email: arad1307@utexas.edu
-Unique Number: 53005
+Name1: Sophie Khounlo
+EID1: svk297
+CS login: sophiek
+Email: s.khounlo@utexas.edu
+Unique Number: 53015
 
 Your partner's ranking (scale below):
 
