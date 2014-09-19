@@ -1,7 +1,9 @@
 /* 
  * psh - A prototype tiny shell program with job control
  * 
- * <Put your name and login ID here>
+ * Sophie Khounlo - svk297
+ *
+ * Dara Cline - dyc257
  */
 #include <stdio.h>
 #include <stdlib.h>
@@ -102,8 +104,33 @@ int main(int argc, char **argv)
  * run the job in the context of the child. If the job is running in
  * the foreground, wait for it to terminate and then return. 
 */
+
+//Sophie is driving
 void eval(char *cmdline) 
 {
+    char **argv;
+    int status;
+    pid_t pid;
+
+    parseline(cmdline, argv);
+
+    if(builtin_cmd(argv))
+    {
+       Signal(SIGQUIT, sigquit_handler);
+    }
+    else
+    {
+       pid = fork();
+       if(pid == 0)
+       {
+          execve( )
+          exit(-1);
+       }
+       else
+       {
+          waitpid(pid, &status, 0);
+       }
+    } 
     return;
 }
 
@@ -116,6 +143,11 @@ void eval(char *cmdline)
  */
 int builtin_cmd(char **argv) 
 {
+    /*if(argv[0] == "quit")
+    {
+       return 1;
+    }*/
+    fprintf(stdout, "argv: %s", argv[0]);
     return 0;     /* not a builtin command */
 }
 

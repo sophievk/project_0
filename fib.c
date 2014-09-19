@@ -72,7 +72,15 @@ static void doFib(int n, int doPrint)
 
    if(n == 0 ||  n == 1)
    {
-      exit(n);
+      if(doPrint == 1)
+      {
+         fprintf(stdout, "fib: %d\n", n);
+         exit(n);
+      }
+      else
+      {
+         exit(n);
+      }
    }
    
    pid = fork(); 
