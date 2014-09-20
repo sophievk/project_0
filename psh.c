@@ -118,11 +118,12 @@ void eval(char *cmdline)
 
     if(builtin_cmd(argv))
     {
-       Signal(SIGQUIT, sigquit_handler);
+      sigquit_handler(SIGQUIT);
     }
     else
     {
        pid = fork();
+//Dara is driving
        if(pid == 0)
        {
           execve(argv[0], argv, environ);
