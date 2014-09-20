@@ -1,0 +1,86 @@
+9/13, 8:00p - 12:30a , Dara, Sophie, 4.5 hours
+Driver Order and Time Length:
+Sophie, 30 minutes
+Dara, 30 minutes
+Sophie, 30 minutes
+Dara, 30 minutes
+Sophie, 30 minutes
+Dara, 30 minutes
+Sophie, 30 minutes
+Dara, 30 minutes
+Sophie, 30 minutes
+
+9/14, 9:00p - 12:30p, Dara, Sophie, 3.5 hours
+Driver Order and Time Length:
+Dara, 30 minutes
+Sophie, 30 minutes
+Dara, 30 minutes
+Sophie, 30 minutes
+Dara, 30 minutes
+Sophie, 30 minutes
+Dara, 30 minutes
+
+9/15, 10:00p - 1:00a, Dara, Sophie, 3 hours
+Driver Order and Time Length:
+Sophie, 30 minutes
+Dara, 30 minutes
+Sophie, 30 minutes
+Dara, 30 minutes
+Sophie, 30 minutes
+Dara, 30 minutes
+
+9/16, 8:00p - 1:30a, Dara, Sophie, 5.5 hours
+Driver Order and Time Length:
+Dara, 30 minutes
+Sophie, 30 minutes
+Dara, 30 minutes
+Sophie, 30 minutes
+Dara, 30 minutes
+Sophie, 30 minutes
+Dara, 30 minutes
+Sophie, 30 minutes
+Dara, 30 minutes
+Sophie, 30 minutes
+Dara, 30 minutes
+
+9/17, 9:00p - 12:00a, Dara, Sophie, 3 hours
+Driver Order and Time Length:
+Sophie, 30 minutes
+Dara, 30 minutes
+Sophie, 30 minutes
+Dara, 30 minutes
+Sophie, 30 minutes
+Dara, 30 minutes
+
+9/18, 10:00p - 12:30a, Dara, Sophie, 2.5 hours
+Driver Order and Time Length:
+Sophie 30 minutes
+Dara 30 minutes
+Sophie 30 minutes
+Dara 30 minutes
+Sophie 30 minutes
+
+9/19, 12:30p - 11:30p, Dara, Sophie, 11 hours
+Driver Order and Time Length:
+Dara, 30 minutes
+Sophie, 30 minutes
+Dara, 30 minutes
+Sophie, 30 minutes
+Dara, 30 mintues
+Sophie, 30 minutes
+Dara, 30 mintues
+Sophie, 30 minutes
+Dara, 30 minutes
+Sophie, 30 minutes
+Dara, 30 mintues
+Sophie, 30 minutes
+Dara, 30 minutes
+Sophie, 30 minutes
+Dara, 30 minutes
+Sophie, 30 minutes
+Dara, 30 minutes
+Sophie, 30 minutes
+Dara, 30 minutes
+Sophie, 30 minutes
+Dara, 30 minutes
+Sophie, 30 minutes
