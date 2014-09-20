@@ -121,8 +121,38 @@ int main(int argc, char **argv)
  * background children don't receive SIGINT (SIGTSTP) from the kernel
  * when we type ctrl-c (ctrl-z) at the keyboard.  
 */
+
+//Sophie is driving
 void eval(char *cmdline) 
 {
+    char cmds[MAXLINE];
+    char *argv[MAXARGS];
+    int status;
+    pid_t pid;
+    
+    strcpy(cmds, cmdline);
+    parseline(cmds, argv);
+    
+    if(builtin_cmd(argv))
+    {
+       if(strcmp(argv[0], "quit") == 0)
+       {
+          sigquit_handler(SIGQUIT);
+       }
+    }
+    else
+    {
+       pid = fork();
+       if(pid == 0)
+       {
+          execve(argv[0], argv, environ);
+          exit(-1);
+       }
+       else
+       {
+          waitpid(pid, &status, 0);
+       }
+    }
     return;
 }
 
@@ -135,6 +165,25 @@ void eval(char *cmdline)
  */
 int builtin_cmd(char **argv) 
 {
+    if(strcmp(argv[0], "quit") == 0)
+    {
+       return 1;
+    }
+    else if(strcmp(argv[0], "jobs") == 0)
+    {
+       listjobs(jobs);
+       return 1;
+    }
+    else if(strcmp(argv[0], "bg") == 0)
+    {
+       do_bgfg(argv);
+       return 1;
+    }
+    else if(strcmp(argv[0], "fg") == 0)
+    {
+       do_bgfg(argv);
+       return 1;
+    }
     return 0;     /* not a builtin command */
 }
 

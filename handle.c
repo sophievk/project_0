@@ -43,13 +43,15 @@ int main(int argc, char **argv)
    while(1)
    {
       fprintf(stdout, "Still here\n");
-      nanosleep(&interval, &remain);
+//Sophie is driving
+      //nanosleep(&interval, &remain);
       if(strcmp(argv[0], "^c") == 0)
       {
          //nanosleep(&remain, NULL);
          sigint_handler(SIGINT);
-         //nanosleep(&remain, NULL);
+         nanosleep(&remain, NULL);
       }
+      nanosleep(&interval, &remain);
    }
    return 0;
 }
@@ -63,6 +65,7 @@ void sigint_handler(int sig)
       exit(-999);
 }
 
+//Dara is driving
 void sigusr1_handler(int sig)
 {
    ssize_t bytes;

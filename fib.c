@@ -95,7 +95,7 @@ static void doFib(int n, int doPrint)
       {
           waitpid(pid, &status, 0);    //parent wait for child
           f1 = WEXITSTATUS(status);
-       }
+      }
           pid2 = fork();
           if (pid2 == 0) 
           {
